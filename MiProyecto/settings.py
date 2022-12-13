@@ -62,7 +62,7 @@ ROOT_URLCONF = 'MiProyecto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/MiProyecto1/MiProyecto/plantillas', 'C:/MiProyecto1/productos/producto'],
+        'DIRS': ['C:/MiProyecto/MiProyecto/plantillas', 'C:/MiProyecto/productos/producto'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'gelmar',
         'USER':'root',
-        'PASSWORD':'',
+        'PASSWORD':'0000',
         'HOST':'localhost',
         'PORT':'3306'
     }
@@ -128,7 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = ['C:/MiProyecto1/MiProyecto/static']
+STATICFILES_DIRS = ['C:/MiProyecto/MiProyecto/static']
 
 MEDIA_ROOT= os.path.join(BASE_DIR,'')
 MEDIA_URL ='/imagenes/'
