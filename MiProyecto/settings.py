@@ -12,19 +12,27 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+import dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Load data env
+ENV = dotenv.dotenv_values()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$a7u9wj(2f7)zak^mmd)*#sqv3t6te*qz+l18h(3*sydg+!!j='
+SECRET_KEY = ENV['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = ENV['DEBUG']
+if DEBUG:
+    try:
+        DEBUG = bool(DEBUG)
+    except:
+        DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -38,13 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'dbbackup',
     'productos',
     'users',
     'catalogo',
     'pqr',
     'libreria',
-    
-
 ]
 
 MIDDLEWARE = [
@@ -58,11 +65,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'MiProyecto.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/MiProyecto/MiProyecto/plantillas', 'C:/MiProyecto/productos/producto'],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'MiProyecto/plantillas'),
+            os.path.join(BASE_DIR, 'productos/producto')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,20 +86,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'MiProyecto.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'gelmar',
-        'USER':'root',
-        'PASSWORD':'0000',
-        'HOST':'localhost',
-        'PORT':'3306'
+        'ENGINE': ENV['DB_ENGINE'],
+        'NAME': ENV['DB_NAME'],
+        'USER': ENV['DB_USER'],
+        'PASSWORD': '',
+        'HOST': ENV['DB_HOST'],
+        'PORT': ENV['DB_PORT'],
     }
 }
+
 
 
 # Password validation
@@ -111,6 +120,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Backup
+# ispath = os.path.join(BASE_DIR, 'backups')
+# print(ispath)
+DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+DBBACKUP_STORAGE_OPTIONS = {'location': './backups'}
+DBBACKUP_CONNECTORS = {
+    'default': {
+        'DUMP_SUFFIX': '--column-statistics=0'
+    }
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -128,7 +148,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = ['C:/MiProyecto/MiProyecto/static']
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'MiProyecto/static')]
 
 MEDIA_ROOT= os.path.join(BASE_DIR,'')
 MEDIA_URL ='/imagenes/'
