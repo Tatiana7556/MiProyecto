@@ -94,7 +94,7 @@ DATABASES = {
         'ENGINE': ENV['DB_ENGINE'],
         'NAME': ENV['DB_NAME'],
         'USER': ENV['DB_USER'],
-        'PASSWORD': '',
+        'PASSWORD': ENV['DB_PASSWORD'],
         'HOST': ENV['DB_HOST'],
         'PORT': ENV['DB_PORT'],
     }
