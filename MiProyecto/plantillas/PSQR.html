@@ -11,6 +11,39 @@
     <!-- bootstrap linked-->
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        html {
+          font-size: 100%;
+        }
+        body {
+          font-size: 1rem;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        li {
+          font-size: 0.9rem;
+        }
+        .f0 {
+          font-size: 0.8rem;
+        }
+        .f1 {
+          font-size: 0.9rem;
+        }
+        .f2 {
+          font-size: 1rem;
+        }
+        .f3 {
+          font-size: 1.1rem;
+        }
+        .f4 {
+          font-size: 1.2rem;
+        }
+        .f5 {
+            font-size: 1.3rem;
+          }
+      </style>
 </head>
 <body >
     <section>   
@@ -33,6 +66,42 @@
         </div>
     </header>
     </section>
+
+    <div>
+        <style>
+            .items{
+                position: fixed;
+                bottom: 0;
+                float: left;
+                height: 55%;
+                color: white;
+              }
+              
+              .itemA img{
+                width: 35px;  
+                background-color: rgb(198, 198, 198); 
+                border-radius: 20px;
+              }
+              
+              .itemD img{
+                width: 30px; 
+                background-color: 
+                rgb(198, 198, 198); 
+                border-radius: 20px;
+              }
+        </style>
+        <p>
+            <ul class="items">
+                <li class="itemA">
+                    <img id="aumentar" src={% static "AumentarReducir/icons8-aumentar-fuente-50.png" %} alt="">
+                </li>
+                <br>
+                <li class="itemD">
+                    <img id="disminuir" src={% static "AumentarReducir/icons8-reducir-fuente-50.png" %} alt="">
+                </li>
+            </ul>
+        </p>
+    </div>
     
     <section class="form-register">
         <div class="container">
@@ -89,6 +158,29 @@
     crossorigin="anonymous">
     </script>
 
+    <script>
+        var classes = ["f0", "f1", "f2", "f3", "f4", "f5"];
+        var classIndex = 2;
+        document.getElementById('aumentar').addEventListener('click', function() {
+          let previousClass = classIndex;
+          classIndex++;
+          classIndex = (classIndex == classes.length) ? classes.length - 1 : classIndex;
+          changeClass(previousClass, classIndex);
+        });
+        document.getElementById('disminuir').addEventListener('click', function () {
+          let previousClass = classIndex;
+          classIndex--;
+          classIndex = (classIndex < 0) ? 0 : classIndex;
+          changeClass(previousClass, classIndex);
+        });
+        function changeClass(previous, next) {
+          if(previous != next) {
+            var htmlElement = document.querySelector('html')
+            htmlElement.classList.remove(classes[previous]);
+            htmlElement.classList.add(classes[next]);
+          }
+        }
+      </script>
 
 </body>
 </html>

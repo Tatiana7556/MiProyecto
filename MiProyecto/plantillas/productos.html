@@ -8,11 +8,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href= {% static "css/estilos.css" %}>
+    <link rel="stylesheet" href= {% static "css/ClaroOscuro.css" %}> 
     
     <!-- bootstrap linked-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
+    <style>
+        html {
+          font-size: 100%;
+        }
+        body {
+          font-size: 1rem;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        li {
+          font-size: 0.9rem;
+        }
+        .f0 {
+          font-size: 0.8rem;
+        }
+        .f1 {
+          font-size: 0.9rem;
+        }
+        .f2 {
+          font-size: 1rem;
+        }
+        .f3 {
+          font-size: 1.1rem;
+        }
+        .f4 {
+          font-size: 1.2rem;
+        }
+        .f5 {
+            font-size: 1.3rem;
+          }
+      </style>
     
 </head>
 <body>
@@ -29,202 +62,220 @@
                     {% endif %}
                     <a href="/ayudaCliente">Ayuda </a>
                     <a href='{% url 'logout' %}'>Salir</a>
+        
                     {% else %} 
                     <a href="{% url 'inicio' %}">Inicio</a>
                     <a href ="/productos">Nuestros Productos</a> 
                     <a href=" {% url 'login' %}">Iniciar Sesión</a>
                     <a href="{% url 'registro' %}">Registrase </a>
+                    
                 {% endif %}
             </nav>
         </div>
     </header>
     <br>
     <br>
+    <div class="todo">
+
+        <section id="catalogo">
+                <h2>Compra por categorías</h2>
+                    <ul id="lista">
+                        <li>
+                            <a href="/televisores"> 
+                                <img src= {% static "Productos/televisor LG 50.png" %} alt='electrodomesticos' class="elec"/>
+                            </a>
+                            <form action="/electrodomesticos">
+                                <input type="submit" value="Televisores">
+                            </form>
+                        </li>
+                        
+            
+                        <li>
+                            <a href="/electrodomesticos"> 
+                                <img src= {% static "Productos/electrodomesticos.jpg" %} alt='electrodomesticos' class="elec"/>
+                            </a>
+                            <form action="/electrodomesticos">
+                                <br>
+                                <input type="submit" value="Electrodomésticos">
+                            </form>
+                        </li>
     
-    <section id="catalogo">
-            <h2>Compra por categorías</h2>
-                <ul id="lista">
-                    <li>
-                        <a href="/televisores"> 
-                            <img src= {% static "Productos/televisor LG 50.png" %} alt='electrodomesticos' class="elec"/>
-                        </a>
-                        <form action="/electrodomesticos">
-                            <input type="submit" value="Televisores">
-                        </form>
-                    </li>
-                    
+                        <li>
+                            <a href="/equipoSonido"> 
+                                <img src= {% static "Productos/Equipo LG.png" %} alt='electrodomesticos' class="elec"/>
+                            </a>
+                            <form action="/equipoSonido">
+                                <input type="submit" value="Equipo De Sonido">
+                            </form>
+                        </li>
+    
+    
+    
+                    </ul>
+        </section>
+        <br>
+        <br>
         
-                    <li>
-                        <a href="/electrodomesticos"> 
-                            <img src= {% static "Productos/electrodomesticos.jpg" %} alt='electrodomesticos' class="elec"/>
-                        </a>
-                        <form action="/electrodomesticos">
-                            <br>
-                            <input type="submit" value="Electrodomésticos">
-                        </form>
+    
+        <section id="marcas">
+            <br>
+            <h3 class="titulo">¡Te ofrecemos las mejores marcas!</h3>
+            <div class="container2">
+                <div class="card">
+                    <a href="/lg">
+                        <img src= {% static "marks/LG.png" %}>
+                    </a>
+                </div>
+    
+                <div class="card">
+                    <a href="/mabe">
+                        <img src= {% static "marks/mabe.png" %}>
+                    </a>
+                </div>
+    
+                <div class="card">
+                    <a href="/challenger">
+                        
+                        <img src= {% static "marks/challenger.png" %}>
+                    </a>
+                </div>
+    
+                <div class="card">
+                    <a href="/abba">
+                        <img src= {% static "marks/abba.png" %}>
+                    </a>
+                </div>
+    
+                <div class="card">
+                    <a href="/whirlpool">
+                        <img src= {% static "marks/whirlpool.png" %}>
+                    </a>
+                </div>
+                <br>
+                <br>
+              
+                <br>
+                <br>
+        </section>
+        <br>
+        <br>
+
+        <div>
+            <p>
+                <ul class="items">
+                    <li class="itemA">
+                        <img id="aumentar" src={% static "AumentarReducir/icons8-aumentar-fuente-50.png" %} alt="">
                     </li>
-
-                    <li>
-                        <a href="/equipoSonido"> 
-                            <img src= {% static "Productos/Equipo LG.png" %} alt='electrodomesticos' class="elec"/>
-                        </a>
-                        <form action="/equipoSonido">
-                            <input type="submit" value="Equipo De Sonido">
-                        </form>
+                    <br>
+                    <li class="itemD">
+                        <img id="disminuir" src={% static "AumentarReducir/icons8-reducir-fuente-50.png" %} alt="">
                     </li>
-
-
-
                 </ul>
-    </section>
-    <br>
-    <br>
-    
-
-    <section id="marcas">
-        <br>
-        <h3 class="titulo">¡Te ofrecemos las mejores marcas!</h3>
-        <div class="container2">
-            <div class="card">
-                <a href="/lg">
-                    <img src= {% static "marks/LG.png" %}>
-                </a>
-            </div>
-
-            <div class="card">
-                <a href="/mabe">
-                    <img src= {% static "marks/mabe.png" %}>
-                </a>
-            </div>
-
-            <div class="card">
-                <a href="/challenger">
-                    
-                    <img src= {% static "marks/challenger.png" %}>
-                </a>
-            </div>
-
-            <div class="card">
-                <a href="/abba">
-                    <img src= {% static "marks/abba.png" %}>
-                </a>
-            </div>
-
-            <div class="card">
-                <a href="/whirlpool">
-                    <img src= {% static "marks/whirlpool.png" %}>
-                </a>
-            </div>
-            <br>
-            <br>
-          
-            <br>
-            <br>
-    </section>
-    <br>
-    <br>
-    
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12" search>
-                    <form method="get">
-                        <div id="custom-search-input">
-                            <div class="input-group col-md-12">
-                                <input type="text" class="form-control" placeholder="Buscar.." name="buscar" value="{{request.GET.buscar}}">
-                                <span class="input-group-list">
-                                    <i class="icon icon-search"></i>
-                                    <button type="submit" class="boton btn-success">Buscar</button>
-                                </span>
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            </p>
         </div>
-    </section>
-
-    <br>
-    <br>
-
-    <section>
+        
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12" search>
+                        <form method="get">
+                            <div id="custom-search-input">
+                                <div class="input-group col-md-12">
+                                    <input type="text" class="form-control" placeholder="Buscar.." name="buscar" value="{{request.GET.buscar}}">
+                                    <span class="input-group-list">
+                                        <i class="icon icon-search"></i>
+                                        <button type="submit" class="boton btn-success">Buscar</button>
+                                    </span>
     
-
-            {% if catalogos %}
-
-            <section>
-                <h1 class="title">Todos los productos</h1>
-                
-            </section>
-            {% else %}
-            <section>
-                <h1 class="text-center"> El producto no Existe</h1>
-            </section>
-            
-            {% endif %}
-
-
-            <br>
-            <br>
-            
-            <div class="container-fluid p-0 m-0 align-items-center justify-content-center d-flex" style="min-height: 100vh; background-color: #ffffff;">
-
-                <!-- Row for the card-->
-                <div class="row w-100 p-0 w-0">
-                    
-                    {% for catalogos in catalogos %}
-            
-                    <!-- Column for card-->
-                    <div class="col-lg-4 mb-2">
-                        <div class="card mx-auto" style="width:18rem;">
-                            <img class="card-img-top" src="{{catalogos.imagen.url}}" alt="Card image cap">
-
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    {{catalogos.nombre}}
-                                </h5>
-                                <p class="card-text">
-                                    {{catalogos.descripcion}}
-                                </p>
-
-                                <h3 class="card-text" style="color: rgb(20, 20, 20);">
-                                    {{catalogos.precio}}
-                                </h3>
-
-                                {% if request.user.is_authenticated %}
-                                <section class="container3">
-                                    <p class="text text-center">
-                                        <h3><a href="/compras">COMPRAR PRODUCTO</a></h3>
-                                    </p>
-                                    
-                                </section>
-                                    
-                                {% else %} 
-                                <p class="text text-center">
-                                    <h3><a href="/login">COMPRAR PRODUCTO</a></h3>
-                                </p>
-                                {% endif %}
-                                
-                                
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
-                    {% endfor %}
-                    
                 </div>
             </div>
+        </section>
+    
+        <br>
+        <br>
+    
+        <section>
         
-        <br>
-        <br>
-
-
-            <section id="footer">
-                <footer>
-                    <p>&copy;GelmarElectrodomesticos 2022</p>
-                </footer>    
-
-            </section>
+    
+                {% if catalogos %}
+    
+                <section>
+                    <h1 class="title">Todos los productos</h1>
+                    
+                </section>
+                {% else %}
+                <section>
+                    <h1 class="text-center"> El producto no Existe</h1>
+                </section>
+                
+                {% endif %}
+    
+    
+                <br>
+                <br>
+                
+                <div class="container-fluid p-0 m-0 align-items-center justify-content-center d-flex" style="min-height: 100vh; background-color: #ffffff;">
+    
+                    <!-- Row for the card-->
+                    <div class="row w-100 p-0 w-0">
+                        
+                        {% for catalogos in catalogos %}
+                
+                        <!-- Column for card-->
+                        <div class="col-lg-4 mb-2">
+                            <div class="card mx-auto" style="width:18rem;">
+                                <img class="card-img-top" src="{{catalogos.imagen.url}}" alt="Card image cap">
+    
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        {{catalogos.nombre}}
+                                    </h5>
+                                    <p class="card-text">
+                                        {{catalogos.descripcion}}
+                                    </p>
+    
+                                    <h3 class="card-text" style="color: rgb(20, 20, 20);">
+                                        {{catalogos.precio}}
+                                    </h3>
+    
+                                    {% if request.user.is_authenticated %}
+                                    <section class="container3">
+                                        <p class="text text-center">
+                                            <h3><a href="/compras">COMPRAR PRODUCTO</a></h3>
+                                        </p>
+                                        
+                                    </section>
+                                        
+                                    {% else %} 
+                                    <p class="text text-center">
+                                        <h3><a href="/login">COMPRAR PRODUCTO</a></h3>
+                                    </p>
+                                    {% endif %}
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+            
+            <br>
+            <br>
+    
+    
+                <section id="footer">
+                    <footer>
+                        <p>&copy;GelmarElectrodomesticos 2022</p>
+                    </footer>    
+    
+                </section>
+    </div>
 
             <!--card end here-->
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -242,7 +293,33 @@
             crossorigin="anonymous">
             </script>
 
-    </section>        
+
+            <script>
+                var classes = ["f0", "f1", "f2", "f3", "f4", "f5"];
+                var classIndex = 2;
+                document.getElementById('aumentar').addEventListener('click', function() {
+                  let previousClass = classIndex;
+                  classIndex++;
+                  classIndex = (classIndex == classes.length) ? classes.length - 1 : classIndex;
+                  changeClass(previousClass, classIndex);
+                });
+                document.getElementById('disminuir').addEventListener('click', function () {
+                  let previousClass = classIndex;
+                  classIndex--;
+                  classIndex = (classIndex < 0) ? 0 : classIndex;
+                  changeClass(previousClass, classIndex);
+                });
+                function changeClass(previous, next) {
+                  if(previous != next) {
+                    var htmlElement = document.querySelector('html')
+                    htmlElement.classList.remove(classes[previous]);
+                    htmlElement.classList.add(classes[next]);
+                  }
+                }
+              </script>
+
+    </section>      
+    
 
 
 </body>

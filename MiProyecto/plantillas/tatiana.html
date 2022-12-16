@@ -10,10 +10,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gelmar Electrodomesticos</title>
     <link rel="stylesheet" href= {% static "css/tatiana.css" %}>
-    <link rel="stylesheet" href= {% static "css/estilos.css" %}> 
+    <link rel="stylesheet" href= {% static "css/estilos.css" %}>
      <!-- bootstrap linked-->
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <style>
+        html {
+          font-size: 100%;
+        }
+        body {
+          font-size: 1rem;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+        li {
+          font-size: 0.9rem;
+        }
+        .f0 {
+          font-size: 0.8rem;
+        }
+        .f1 {
+          font-size: 0.9rem;
+        }
+        .f2 {
+          font-size: 1rem;
+        }
+        .f3 {
+          font-size: 1.1rem;
+        }
+        .f4 {
+          font-size: 1.2rem;
+        }
+      </style>
      
     
 </head>
@@ -63,11 +92,13 @@
 
         
     </header>
+    
 
     <section id="hero">
         <h1> Distribuidores Directos  De Fábrica <br> Desde 1995 <br> 27 Años con los Colombianos </br> </h1>
         <form action="#somos-gelmar">
-            <button>CONÓCENOS</button>
+            <button class="btnconocenos">CONÓCENOS</button>
+            
         </form>
     </section>
     
@@ -142,6 +173,21 @@
     <br>
     <br>
 
+<section>
+    <div>
+        <p>
+            <ul class="items">
+                <li class="itemA">
+                    <img id="aumentar" src={% static "AumentarReducir/icons8-aumentar-fuente-50.png" %} alt="">
+                </li>
+                <br>
+                <li class="itemD">
+                    <img id="disminuir" src={% static "AumentarReducir/icons8-reducir-fuente-50.png" %} alt="">
+                </li>
+            </ul>
+        </p>
+    </div>
+</section>
 
     <section id="contactenos">
         <div class="contactenos">
@@ -155,6 +201,7 @@
                 <li>📧​ gelmarelectrodomesticos@gmail.com</li>
                 <li>💲 Los Mejores Precios En El Mercado</li>
             </ul>
+            
         </div>
 
     <section class="mapa">
@@ -219,6 +266,30 @@
       crossorigin="anonymous">
     </script>
 
+
+    <script>
+        var classes = ["f0", "f1", "f2", "f3", "f4"];
+        var classIndex = 2;
+        document.getElementById('aumentar').addEventListener('click', function() {
+          let previousClass = classIndex;
+          classIndex++;
+          classIndex = (classIndex == classes.length) ? classes.length - 1 : classIndex;
+          changeClass(previousClass, classIndex);
+        });
+        document.getElementById('disminuir').addEventListener('click', function () {
+          let previousClass = classIndex;
+          classIndex--;
+          classIndex = (classIndex < 0) ? 0 : classIndex;
+          changeClass(previousClass, classIndex);
+        });
+        function changeClass(previous, next) {
+          if(previous != next) {
+            var htmlElement = document.querySelector('html')
+            htmlElement.classList.remove(classes[previous]);
+            htmlElement.classList.add(classes[next]);
+          }
+        }
+      </script>
 
 </body>
 </html>
