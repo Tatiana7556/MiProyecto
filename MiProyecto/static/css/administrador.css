@@ -123,3 +123,28 @@
 		}
 	}
 	/*Fin de Menù lateral*/
+
+
+	
+/*Aumentar y Disminuir*/
+
+.items{
+    position: fixed;
+    bottom: 0;
+    float: left;
+    height: 55%;
+    color: white;
+}
+
+.itemA img{
+    width: 35px;  
+    background-color: rgb(198, 198, 198); 
+    border-radius: 20px;
+}
+
+.itemD img{
+    width: 30px; 
+    background-color: 
+    rgb(198, 198, 198); 
+    border-radius: 20px;
+}
