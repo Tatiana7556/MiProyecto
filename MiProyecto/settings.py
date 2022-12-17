@@ -50,8 +50,8 @@ INSTALLED_APPS = [
     'productos',
     'users',
     'catalogo',
-    'pqr',
-    'libreria',
+    'pqr'
+    
 ]
 
 MIDDLEWARE = [
