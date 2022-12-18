@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos abba</title>
+    <title>Productos Abba</title>
     <link rel="stylesheet" href="{% static "css/estilos.css" %}">
     <!-- bootstrap linked-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -64,53 +64,14 @@
             </nav>
         </div>
     </header>
+    <br>
 
     <section id="productos-abba">
         <img src={% static "/marks/abba.png" %}>
     </section>
+    <br>
+    <br>
 
-    <section>
-      <style>           
-        .items{
-            position: fixed;
-            bottom: 0;
-            float: left;
-            height: 55%;
-            color: white;
-        }
-
-        .itemA img{
-            width: 35px;  
-            background-color: rgb(198, 198, 198); 
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        .itemD img{
-            width: 30px; 
-            background-color: 
-            rgb(198, 198, 198); 
-            border-radius: 20px;
-            cursor: pointer;
-        }
-    </style>
-        <div>
-            <p>
-                <ul class="items">
-                    <li class="itemA">
-                        <img id="aumentar" src={% static "AumentarReducir/icons8-aumentar-fuente-50.png" %} alt="">
-                    </li>
-                    <br>
-                    <li class="itemD">
-                        <img id="disminuir" src={% static "AumentarReducir/icons8-reducir-fuente-50.png" %} alt="">
-                    </li>
-                </ul>
-            </p>
-        </div>
-        <br>
-        <br>
-        
-    </section>
 
     <div class="container-fluid p-0 m-0 align-items-center justify-content-center d-flex" style="min-height: 100vh; background-color: #ffffff;">
 
@@ -123,10 +84,14 @@
                     <img class="card-img-top" src="{{abbas.imagen.url}}" alt="Card image cap">
 
                     <div class="card-body">
-                        <h5 class="card-title">
+                      <p class="text text-center">
+                        <small>Imagen tomada de: 
+                        Electrodomésticos Gelmar s.a.s</small>
+                      </p>
+                        <h5 class=" text text-center">
                             {{abbas.nombre}}
                         </h5>
-                        <p class="card-text">
+                        <p class=" text text-center">
                             {{abbas.descripcion}}
                         </p>
 

@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=opera">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gelmar Electrodomesticos</title>
+    <title>Electrodomesticos Gelmar</title>
     <link rel="stylesheet" href= {% static "css/tatiana.css" %}>
     <link rel="stylesheet" href= {% static "css/estilos.css" %}>
      <!-- bootstrap linked-->
@@ -77,7 +77,7 @@
 
                 {% else %} 
                 <a href="#somos-gelmar">Sobre Nosotros</a>
-                <a href="#contactenos">Contactanos</a>
+                <a href="#contactenos">Contáctanos</a>
                 <a href ="/productos">Nuestros Productos</a> 
                 <a href=" {% url 'login' %}">Iniciar Sesión</a>
                 <a href="{% url 'registro' %}">Registrase</a>
@@ -95,7 +95,7 @@
     
 
     <section id="hero">
-        <h1> Distribuidores Directos  De Fábrica <br> Desde 1995 <br> 27 Años con los Colombianos </br> </h1>
+        <h1> Distribuidores Directos De Fábrica <br> Desde 1995 <br> 27 Años con los Colombianos </br> </h1>
         <form action="#somos-gelmar">
             <button class="btnconocenos">CONÓCENOS</button>
             
@@ -104,14 +104,14 @@
     
     <section id="somos-gelmar">
         
-        <h1 class="title">Sobre Nosotros</h1> 
+        <h1 class="title">Sobre nosotros</h1> 
         <div class="container">
             <div class="image2">              
                <img  src={% static "img_tatiana/imagen2.jpg" %}  alt="">
                 </div>
             <div class="content">
                 <h3>NUESTRA MISIÓN:</h3>
-                <p> Ser parte del embellecimiento y confort de cada hogar, ofreciendo los mejores electrdomesticos de alta calidad que satisfagan las necesidades de nuestros clientes, con el buen servicio avalado por la capacidad y experiencia de nustros colaboradores.</p>
+                <p> Ser parte del embellecimiento y confort de cada hogar, ofreciendo los mejores electrodomésticos de alta calidad que satisfagan las necesidades de nuestros clientes, con el buen servicio avalado por la capacidad y experiencia de nuestros colaboradores.</p>
                 <h3>NUESTRA VISIÓN:</h3>
                 <p> Ser reconocida a nivel nacional en cada hogar y de la misma manera ofrecer servicios de un alto nivel de calidad desde nuestros colaboradores a nuestros clientes.</p>
             </div> 
@@ -120,9 +120,8 @@
 
         
     </section>
-
             <section id="nuestros-productos">
-            <h2>Nuestros Productos</h2>
+            <h2>Nuestros productos</h2>
             <div class="tarjeta">
                 <div class="card">
                     <figure>
@@ -130,11 +129,11 @@
                     </figure>
             <div class="contenido-card">
                 <h3>Televisores</h3>
-                <p>Podras encontrar las mejores marcas y calidad en nuestros Televisores.</p>
+                <p>Podrás encontrar las mejores marcas y calidad en nuestros Televisores.</p>
                 {% if request.user.is_authenticated %}
-                <a href="/televisores">Mas Informacion</a>
+                <a href="/televisores">Más información</a>
                 {% else %} 
-                <a href="/login">Mas Informacion</a>
+                <a href="/login">Más información</a>
                 {% endif %}
             </div>
         </div>
@@ -144,11 +143,11 @@
             </figure>
             <div class="contenido-card">
                 <h3>Electrodomésticos</h3>
-                <p>Nuestros electrodomesticos cuentan con la mayor calidad.</p>
+                <p>Nuestros electrodomésticos cuentan con la mayor calidad.</p>
                 {% if request.user.is_authenticated %}
-                <a href="/electrodomesticos">Mas Informacion</a>
+                <a href="/electrodomesticos">Más información</a>
                 {% else %} 
-                <a href="/login">Mas Informacion</a>
+                <a href="/login">Más información</a>
                 {% endif %}
             </div>
         </div>
@@ -158,11 +157,11 @@
             </figure>
             <div class="contenido-card">
                 <h3>Equipos de Sonido</h3>
-                <p>Aqui encontraras el mejor sonido para disfrurar en tu hogar.</p>
+                <p>Aquí encontrarás el mejor sonido para disfrutar en tu hogar.</p>
                 {% if request.user.is_authenticated %}
-                <a href="/equipoSonido">Mas Informacion</a>
+                <a href="/equipoSonido">Más información</a>
                 {% else %} 
-                <a href="/login">Mas Informacion</a>
+                <a href="/login">Más información</a>
                 {% endif %}
             </div>
         </div>
@@ -215,12 +214,12 @@
 
     <section id="contactenos">
         <div class="contactenos">
-            <h2>Contactanos</h2>
+            <h2>Contáctanos</h2>
             <ul>
                 <li>☑️ Distribuidores Directos De Fabrica</li>
                 <li>☑️ 100% Calidad</li>
                 <li>🗺️​ Cra 13 # 15-59</li>
-                <li>🏙️​ Bogota-Colombia</li>
+                <li>🏙️​ Bogotá-Colombia</li>
                 <li>☎️ 3423642</li>
                 <li>📧​ gelmarelectrodomesticos@gmail.com</li>
                 <li>💲 Los Mejores Precios En El Mercado</li>
@@ -240,7 +239,7 @@
 
     <section id="redes-sociales">
         <div class="redes">
-            <h2> Siguenos en :</h2>
+            <h2> Síguenos en :</h2>
             <ul>
                 <li>
                     <a href="https://www.facebook.com/profile.php?id=100082377722169" target="_blank">

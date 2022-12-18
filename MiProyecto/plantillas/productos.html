@@ -105,7 +105,7 @@
                                 <img src= {% static "Productos/Equipo LG.png" %} alt='electrodomesticos' class="elec"/>
                             </a>
                             <form action="/equipoSonido">
-                                <input type="submit" value="Equipo De Sonido">
+                                <input type="submit" value="Equipo De sonido">
                             </form>
                         </li>
     
@@ -231,7 +231,7 @@
                 </section>
                 {% else %}
                 <section>
-                    <h1 class="text-center"> El producto no Existe</h1>
+                    <h1 class="text-center"> El producto no existe</h1>
                 </section>
                 
                 {% endif %}
@@ -251,18 +251,23 @@
                         <div class="col-lg-4 mb-2">
                             <div class="card mx-auto" style="width:18rem;">
                                 <img class="card-img-top" src="{{catalogos.imagen.url}}" alt="Card image cap">
-    
+                                
                                 <div class="card-body">
-                                    <h5 class="card-title">
+                                    <p class="text text-center">
+                                        <small>Imagen tomada de: 
+                                        Electrodomésticos Gelmar s.a.s</small>
+                                    </p>
+                                    <h5 class=" text text-center">
                                         {{catalogos.nombre}}
                                     </h5>
-                                    <p class="card-text">
+                                    <p class=" text text-center">
                                         {{catalogos.descripcion}}
                                     </p>
     
                                     <h3 class="card-text" style="color: rgb(20, 20, 20);">
                                         {{catalogos.precio}}
                                     </h3>
+                                    
     
                                     {% if request.user.is_authenticated %}
                                     <section class="container3">

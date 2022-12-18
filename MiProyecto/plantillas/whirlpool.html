@@ -64,52 +64,16 @@
             </nav>
         </div>
     </header>
+    <br>
 
     <section id="productos-whirlpool">
         
         <img src= {% static "marks/whirlpool.png" %} >
     </section>
+    <br>
+    <br>
 
-    <section>
-      <style>           
-        .items{
-            position: fixed;
-            bottom: 0;
-            float: left;
-            height: 55%;
-            color: white;
-        }
 
-        .itemA img{
-            width: 35px;  
-            background-color: rgb(198, 198, 198); 
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        .itemD img{
-            width: 30px; 
-            background-color: 
-            rgb(198, 198, 198); 
-            border-radius: 20px;
-            cursor: pointer;
-        }
-    </style>
-        <div>
-            <p>
-                <ul class="items">
-                    <li class="itemA">
-                        <img id="aumentar" src={% static "AumentarReducir/icons8-aumentar-fuente-50.png" %} alt="">
-                    </li>
-                    <br>
-                    <li class="itemD">
-                        <img id="disminuir" src={% static "AumentarReducir/icons8-reducir-fuente-50.png" %} alt="">
-                    </li>
-                </ul>
-            </p>
-        </div>
-        <br>
-    </section>
 
     <div class="container-fluid p-0 m-0 align-items-center justify-content-center d-flex" style="min-height: 100vh; background-color: #ffffff;">
 
@@ -122,10 +86,14 @@
                     <img class="card-img-top" src="{{wh.imagen.url}}" alt="Card image cap">
 
                     <div class="card-body">
-                        <h5 class="card-title">
+                      <p class="text text-center">
+                        <small>Imagen tomada de: 
+                        Electrodomésticos Gelmar s.a.s</small>
+                      </p>
+                        <h5 class=" text text-center">
                             {{wh.nombre}}
                         </h5>
-                        <p class="card-text">
+                        <p class=" text text-center">
                             {{wh.descripcion}}
                         </p>
 
