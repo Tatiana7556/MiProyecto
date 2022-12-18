@@ -20,6 +20,11 @@ def registro(request):
         form=userRegisterForm()
              
     context = {'form':form}
-    return render(request,"Registro.html", context)    
+    return render(request,"Registro.html", context)
+
+
+   
+    
+
 
 
