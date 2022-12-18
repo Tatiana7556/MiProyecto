@@ -15,6 +15,7 @@ urlpatterns = [
    path("actualizar/<int:id>", views.actualizar, name="actualizar"),
    path("ayuda/", views.ayuda, name="ayuda"),
    path("ayudaCliente/", views.ayudaCliente, name="ayudaCliente"),
+   path("reportes/", views.reportes, name="reportes"),
    
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

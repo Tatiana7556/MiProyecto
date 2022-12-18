@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <title>Nuevo Producto</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static "css/agregarproducto.css" %}">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"type="text/javascript"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
+  
+  <body>
+
+    <header>
+      <div class="container">
+          <p class="logo">Electrodomésticos GELMAR</p>
+          <nav>
+              <a href="{% url 'inicio' %}">Inicio</a>
+              <a href="/administrador">Administrador</a>
+              <a href="/portafolio"> Productos</a>
+              <a href="/login">Salir</a>
+          </nav>
+          
+      </div>
+  </header>
+  <br>
+  <br>
+
+    <section>
+        
+  <link
+    rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
+  <style>
+    .container {
+      width: 70%;
+      margin: auto;
+    }
+    body {
+      text-align: center;
+      color: rgb(216, 15, 25);
+    }
+    h2 {
+      text-align: center;
+      font-family: "Verdana", sans-serif;
+      font-size: 30px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h2>Reporte de productos</h2>
+      <div>
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+  </body>
+  
+  <script>
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var myChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: [
+          "LG",
+          "MABE",
+          "CHALLENGER",
+          "ABBA",
+          "WHIRPOOL",
+        ],
+        datasets: [
+          {
+            label: "Vendido",
+            data: [3,2,2,4,2],
+            backgroundColor: "rgb(221, 41, 50)",
+          },
+          {
+            label: "Cantidad",
+            data: [5, 3, 6, 5, 3,],
+            backgroundColor: "rgb(224, 86, 93)",
+          },
+        ],
+      },
+    });
+  </script>
+
+</section>
+<br>
+<br>
+<br>
+
+     
+  
+    
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+  
+
+  </body>
+  </html>
+   
+    
+
+
+  
+  

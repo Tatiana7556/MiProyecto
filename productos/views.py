@@ -30,7 +30,7 @@ def agregar(request):
     formulario=productoForm(request.POST or None, request.FILES or None)
     if formulario.is_valid():
         formulario.save()
-        messages.success(request,'Se Creo Correctamente el Producto.') 
+        messages.success(request,'Se creó correctamente el producto.') 
         return redirect ('portafolio')
     return render (request,'Agregar.Producto.html' , {'formulario':formulario}) 
 
@@ -39,14 +39,14 @@ def actualizar(request, id):
     formulario=productoForm(request.POST or None, request.FILES or None, instance=productos)
     if formulario.is_valid() and request.POST:
         formulario.save()
-        messages.success(request,'Se Actualizo Correctamente el Producto.') 
+        messages.success(request,'Se actualizó correctamente el producto.') 
         return redirect ('portafolio')
     return render (request,'actualizar.html',{'formulario':formulario})       
 
 def eliminar(request,id):
     productos= producto.objects.get(id=id)
     productos.delete()
-    messages.success(request,'Se Elimino Correctamente el Producto.') 
+    messages.success(request,'Se eliminó correctamente el producto.') 
     return redirect('portafolio')
      
 def ayuda(request):
@@ -54,3 +54,7 @@ def ayuda(request):
 
 def ayudaCliente(request):
     return render(request,'ayuda_usuario.html')
+
+
+def reportes(request):
+    return render (request,'reportes.html')    
